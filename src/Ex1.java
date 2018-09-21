@@ -1,3 +1,14 @@
+/**
+ * Exercício de polimorfismo dinâmico e estático.
+ * Programação Modular - Universidade Federal de Minas Gerais
+ * 2018/2
+ * Aluno: Matheus Filipe Sieiro Vargas
+ * Matrícula: 2014144812
+ */
+
+import java.util.*;
+import java.util.Scanner;
+
 public class Ex1 {
 
     class ObjectHandler {
@@ -27,7 +38,7 @@ public class Ex1 {
 
         @Override
         public String toString() {
-            f(o.objectId != null) {
+            if(o.objectId != null) {
                 return "Object [Id=" + objectId.intHandlerId + "]";
             } else {
                 return "Object [StringId=" + objectStringId.stringHandlerId + "]";
@@ -44,22 +55,32 @@ public class Ex1 {
         }
     }
 
-    class IntHandler() {
+    class IntHandler {
         int intHandlerId;
-
-        public IntHandler(){
-
+        public IntHandler(int i){
+            this.intHandlerId = i;
         }
     }
 
-    class StringHandler() {
+    class StringHandler {
         String stringHandlerId;
-
-        public StringHandler(){
-
+        public StringHandler(String s){
+            this.stringHandlerId = s;
         }
     }
 
     public static void main (String [] args){
+        int NUM_OF_ENTRIES = 30;
+        Scanner keyboard = new Scanner(System.in);
+        List<ObjectHandler> integers = new ArrayList<ObjectHandler>();
+        List<ObjectHandler> strings = new ArrayList<ObjectHandler>();
+
+        for(int i = 0; i < NUM_OF_ENTRIES; i++) {
+            System.out.println("Insira um inteiro");
+            new IntHandler(keyboard.nextInt());
+            System.out.println("Insira uma string");
+            new StringHandler(keyboard.nextString());
+        }
+
     }
 }
