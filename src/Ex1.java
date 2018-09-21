@@ -2,12 +2,12 @@ public class Ex1 {
 
     class ObjectHandler {
 
-        int objectId = null;
-        String objectStringId = null;
+        IntHandler objectId = null;
+        StringHandler objectStringId = null;
 
-        public ObjectHandler(int o) { this.objectId = o;}
+        public ObjectHandler(IntHandler o) { this.objectId = o;}
 
-        public ObjectHandler(String o) { this.objectStringId = o;}
+        public ObjectHandler(StringHandler o) { this.objectStringId = o;}
 
         public boolean insertObjectOnList(List<ObjectHandler> objectHandlers, ObjectHandler objectHandler) {
             if(objectHandlers.add(objectHandler))
@@ -19,18 +19,18 @@ public class Ex1 {
         @Override
         public int compareTo(Object o) {
             if(o.objectId != null) {
-                return this.objectID.compareTo(o.objectID);
+                return this.objectID.intHandlerId.compareTo(o.objectID.intHandlerId);
             } else {
-                return this.objectStringId.compareTo(o.objectStringId);
+                return this.objectStringId.stringHandlerId.compareTo(o.objectStringId.stringHandlerId);
             }
         }
 
         @Override
         public String toString() {
             f(o.objectId != null) {
-                return "Object [Id=" + objectId + "]";
+                return "Object [Id=" + objectId.intHandlerId + "]";
             } else {
-                return "Object [" + StringId=" + objectStringId + "]";
+                return "Object [StringId=" + objectStringId.stringHandlerId + "]";
             }
 
         }
@@ -44,8 +44,22 @@ public class Ex1 {
         }
     }
 
+    class IntHandler() {
+        int intHandlerId;
+
+        public IntHandler(){
+
+        }
+    }
+
+    class StringHandler() {
+        String stringHandlerId;
+
+        public StringHandler(){
+
+        }
+    }
 
     public static void main (String [] args){
-        System.out.println("Hello World");
     }
 }
