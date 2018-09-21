@@ -2,9 +2,12 @@ public class Ex1 {
 
     class ObjectHandler {
 
-        int objectID;
+        int objectId = null;
+        String objectStringId = null;
 
-        public ObjectHandler() {}
+        public ObjectHandler(int o) { this.objectId = o;}
+
+        public ObjectHandler(String o) { this.objectStringId = o;}
 
         public boolean insertObjectOnList(List<ObjectHandler> objectHandlers, ObjectHandler objectHandler) {
             if(objectHandlers.add(objectHandler))
@@ -15,22 +18,31 @@ public class Ex1 {
 
         @Override
         public int compareTo(Object o) {
-            return this.objectID.compareTo(o.objectID);
+            if(o.objectId != null) {
+                return this.objectID.compareTo(o.objectID);
+            } else {
+                return this.objectStringId.compareTo(o.objectStringId);
+            }
         }
 
         @Override
         public String toString() {
-            return "Object [Id=" + objectID + "]";
+            f(o.objectId != null) {
+                return "Object [Id=" + objectId + "]";
+            } else {
+                return "Object [" + StringId=" + objectStringId + "]";
+            }
+
         }
 
         public void crescOrderList(List<ObjectHandler> objectHandlers){
             Collections.sort(objectHandlers);
+        }
+
+        public void printObjectHandlerList(List<ObjectHandler> objectHandlers){
             System.out.println(objectHandlers);
         }
     }
-
-
-
 
 
     public static void main (String [] args){
