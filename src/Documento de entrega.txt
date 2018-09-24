@@ -73,3 +73,11 @@ public class Ex1 {
 
     }
 }
+
+
+matheus@matheus:~/Documentos/UFMG/PM/EX1-PM/src$ javac Ex1.java
+matheus@matheus:~/Documentos/UFMG/PM/EX1-PM/src$ java Ex1
+[5, 3, 31, 4, 656, 2, 1, 94574]
+[sdsfsdfds, asaaaaaa, bbbbfffff, mbnmbnmnb]
+[1, 2, 3, 4, 5, 31, 656, 94574]
+[asaaaaaa, bbbbfffff, mbnmbnmnb, sdsfsdfds]
