@@ -7,80 +7,46 @@
  */
 
 import java.util.*;
-import java.util.Scanner;
 
 public class Ex1 {
 
-    class ObjectHandler {
+    static class ObjectHandler {
 
-        IntHandler objectId = null;
-        StringHandler objectStringId = null;
+        Object o;
 
-        public ObjectHandler(IntHandler o) { this.objectId = o;}
+        public ObjectHandler() { }
 
-        public ObjectHandler(StringHandler o) { this.objectStringId = o;}
+        public boolean insertObjectOnList(List<Object> objects, Object object) { objects.add(object) }
 
-        public boolean insertObjectOnList(List<ObjectHandler> objectHandlers, ObjectHandler objectHandler) {
-            if(objectHandlers.add(objectHandler))
-                return true;
-            else
-                return false;
-        }
+        //public void crescOrderList(List<Object> objects){ Collections.sort(objects); }
 
-        @Override
-        public int compareTo(Object o) {
-            if(o.objectId != null) {
-                return this.objectID.intHandlerId.compareTo(o.objectID.intHandlerId);
-            } else {
-                return this.objectStringId.stringHandlerId.compareTo(o.objectStringId.stringHandlerId);
-            }
-        }
-
-        @Override
-        public String toString() {
-            if(o.objectId != null) {
-                return "Object [Id=" + objectId.intHandlerId + "]";
-            } else {
-                return "Object [StringId=" + objectStringId.stringHandlerId + "]";
-            }
-
-        }
-
-        public void crescOrderList(List<ObjectHandler> objectHandlers){
-            Collections.sort(objectHandlers);
-        }
-
-        public void printObjectHandlerList(List<ObjectHandler> objectHandlers){
-            System.out.println(objectHandlers);
+        public void printObjectHandlerList(List<Object> objects){
+            System.out.println(objects);
         }
     }
 
-    class IntHandler {
-        int intHandlerId;
-        public IntHandler(int i){
-            this.intHandlerId = i;
-        }
+    static class IntHandler {
+        List<Object> integerList = new ArrayList<Object>();
     }
 
-    class StringHandler {
-        String stringHandlerId;
-        public StringHandler(String s){
-            this.stringHandlerId = s;
-        }
+    static class StringHandler {
+        List<Object> stringList = new ArrayList<Object>();
     }
 
     public static void main (String [] args){
-        int NUM_OF_ENTRIES = 30;
-        Scanner keyboard = new Scanner(System.in);
-        List<ObjectHandler> integers = new ArrayList<ObjectHandler>();
-        List<ObjectHandler> strings = new ArrayList<ObjectHandler>();
+        ObjectHandler objectHandler = new ObjectHandler();
+        IntHandler integers = new IntHandler();
+        StringHandler strings = new StringHandler();
 
-        for(int i = 0; i < NUM_OF_ENTRIES; i++) {
-            System.out.println("Insira um inteiro");
-            new IntHandler(keyboard.nextInt());
-            System.out.println("Insira uma string");
-            new StringHandler(keyboard.nextString());
-        }
+        objectHandler.insertObjectOnList(integers.integerList, 5);
+        objectHandler.insertObjectOnList(integers.integerList, 43);
+        objectHandler.insertObjectOnList(integers.integerList, 3);
+        objectHandler.insertObjectOnList(integers.integerList, 4);
+        objectHandler.insertObjectOnList(integers.integerList, 656);
+        objectHandler.insertObjectOnList(integers.integerList, 2);
+        objectHandler.insertObjectOnList(integers.integerList, 1);
+        objectHandler.insertObjectOnList(integers.integerList, 94574);
+        objectHandler.printObjectHandlerList(integers.integerList);
 
     }
 }
